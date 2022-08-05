@@ -1,0 +1,411 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="slider" xmlns="http://www.w3.org/1999/html"><!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="carousel slide" data-ride="carousel" id="slider-carousel">
+                    <ol class="carousel-indicators">
+                        <li class="active" data-slide-to="0" data-target="#slider-carousel"></li>
+                        <li data-slide-to="1" data-target="#slider-carousel"></li>
+                        <li data-slide-to="2" data-target="#slider-carousel"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-6">
+                                <h1><span>E</span>-SHOPPER</h1>
+                                <h2>Free E-Commerce Template</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. </p>
+                                <button class="btn btn-default get" type="button">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img alt="" class="girl img-responsive"
+                                     src="{% static 'website/images/home/girl1.jpg' %}"/>
+                                <img alt="" class="pricing" src="{% static 'website/images/home/pricing.png' %}"/>
+                            </div>
+                        </div>
+                        {% for i in slideimage %}
+                        <div class="item">
+                            <div class="col-sm-6">
+                                <h1>{{i.title}}</h1>
+                                <h2>{{i.subtitle}}</h2>
+                                <p>{{i.description}}</p>
+                                <button class="btn btn-default get" type="button">Get it now</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <img alt="loading" class="girl img-responsive" src="{{i.slider_image.url}}"/>
+                                <img alt="loading" class="pricing" src="{{i.price_tag.url}}"/>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <a class="left control-carousel hidden-xs" data-slide="prev" href="#slider-carousel">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right control-carousel hidden-xs" data-slide="next" href="#slider-carousel">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Sportswear
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="sportswear">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'womensdata' 'NIKE' %}">Nike </a></li>
+                                        <li><a href="{% url 'womensdata' 'UNDERARMOUR' %}">Under Armour </a></li>
+                                        <li><a href="{% url '404' %}">Adidas </a></li>
+                                        <li><a href="{% url '404' %}">Puma</a></li>
+                                        <li><a href="{% url '404' %}">ASICS </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#mens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Mens
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="mens">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'mensdata' 'FENDI' %}">Fendi</a></li>
+                                        <li><a href="{% url 'mensdata' 'GUESS' %}">Guess</a></li>
+                                        <li><a href="{% url 'mensdata' 'VALENTINO' %}">Valentino</a></li>
+                                        <li><a href="{% url 'mensdata' 'DIOR' %}">Dior</a></li>
+                                        <li><a href="{% url 'mensdata' 'ARMANI' %}">Armani</a></li>
+                                        <li><a href="{% url 'mensdata' 'PRADA' %}">Prada</a></li>
+                                        <li><a href="{% url 'mensdata' 'CHANEL' %}">Chanel</a></li>
+                                        <li><a href="{% url 'mensdata' 'GUCCI' %}">Gucci</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#womens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Womens
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="womens">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'womensdata' 'FENDI' %}">Fendi</a></li>
+                                        <li><a href="{% url 'womensdata' 'GUESS' %}">Guess</a></li>
+                                        <li><a href="{% url 'womensdata' 'VALENTINO' %}">Valentino</a></li>
+                                        <li><a href="{% url 'womensdata' 'DIOR' %}">Dior</a></li>
+                                        <li><a href="{% url '404' %}">Versace</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url 'womensdata' 'Kids' %}">Kids</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Fashion</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Households</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Interiors</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Clothing</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Bags</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Shoes</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-products-->
+
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{% url 'womensdata' 'FENDI' %}"> <span
+                                        class="pull-right">({{fendi}})</span>Fendi</a></li>
+                                <li><a href="{% url 'womensdata' 'ALBIRO' %}"> <span
+                                        class="pull-right">({{albiro}})</span>Albiro</a></li>
+                                <li><a href="{% url 'womensdata' 'ACNE' %}"> <span class="pull-right">({{acne}})</span>Acne</a>
+                                </li>
+                                <li><a href="{% url 'womensdata' 'UNDERARMOUR' %}"> <span class="pull-right">({{underarmour}})</span>Under
+                                    Armour</a></li>
+                                <li><a href="{% url 'womensdata' 'PRADA' %}"> <span
+                                        class="pull-right">({{prada}})</span>Prada</a></li>
+                                <li><a href="{% url 'womensdata' 'CHANEL' %}"> <span
+                                        class="pull-right">({{chanel}})</span>Chanel</a></li>
+                                <li><a href="{% url 'womensdata' 'GUCCI' %}"> <span
+                                        class="pull-right">({{gucci}})</span>Gucci</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+
+                    <div class="price-range"><!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <input id="rangeInput" max={{minMaxPrice.price__max}} min={{minMaxPrice.price__min}}
+                                       oninput="maxPrice.value=this.value" type="range"
+                                       value="{{minMaxPrice.price__min}}"/>
+                                <p>{{minMaxPrice.price__min}}-{{minMaxPrice.price__max}}</p>
+                            </li>
+                            <li class="list-group-item">
+                                Max: <input class="form-control" id="maxPrice"
+                                            id="maxPrice" max={{minMaxPrice.price__max}}
+                                            min={{minMaxPrice.price__min}} onkeyup="rangeInput.value=this.value" type="number"
+                                            value="{{minMaxPrice.price__min}}"/><br>
+                                <button class="btn btn-info btn-sm mt-1" id="priceFilterBtn">Filter</button>
+                            </li>
+                        </div>
+                    </div><!--/price-range-->
+
+                    {% for sf in sideofferbar %}
+                    <div class="shipping text-center"><!--shipping-->
+                        <img alt="{{sf.title}}" src="{{sf.sideofferbar.url}}"/>
+                    </div><!--/shipping-->
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items"><!--features_items-->
+                    <h2 class="title text-center">Features Items</h2>
+                    {% for fi in feature_item %}
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img alt="" src="{{fi.prod_image.url}}"/>
+                                    <h2>${{fi.discounted_price}}</h2>
+                                    <p>{{fi.product_name}}</p>
+                                    <button>
+                                        <a class="btn btn-outline-secondary add-btn update-cart"
+                                           data-action="add" data-product="{{fi.id}}"
+                                           href="{% url 'cartnew' %}">
+                                            <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </button>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>${{fi.selling_price}}</h2>
+                                        <p>{{fi.product_name}}</p>
+                                        <button>
+                                            <a class="btn btn-outline-secondary add-btn update-cart"
+                                               data-action="add" data-product="{{fi.id}}"
+                                               href="{% url 'cartnew' %}">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="{% url 'product-detail' fi.id %}"><i class="fa fa-info-circle"></i>Product
+                                        Details</a></li>
+                                </ul>
+                            </div>
+                            <img alt="" class="new" src="{{fi.prod_tag.url}}"/>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><!--features_items-->
+
+                <div class="category-tab"><!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#tshirt">T-Shirt</a></li>
+                            <li><a data-toggle="tab" href="#blazers">Blazers</a></li>
+                            <li><a data-toggle="tab" href="#sunglass">Sunglass</a></li>
+                            <li><a data-toggle="tab" href="#kids">Kids</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tshirt">
+                            {% for ts in tshirt %}
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a class="product-image-wrapper"
+                                               href="{% url 'product-detail' ts.id %}">
+                                                <img alt="" src="{{ts.prod_image.url}}"/>
+                                                <h2>${{ts.selling_price}}</h2>
+                                                <p>{{ts.product_name}}</p>
+                                            </a>
+                                        </div>
+                                        <img alt="" class="new" src="{{ts.prod_tag.url}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="tab-pane fade" id="blazers">
+                            {% for blz in blazer %}
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a class="product-image-wrapper"
+                                               href="{% url 'product-detail' blz.id %}">
+                                                <img alt="" src="{{blz.prod_image.url}}"/>
+                                                <h2>${{blz.selling_price}}</h2>
+                                                <p>{{blz.product_name}}</p>
+                                            </a>
+                                        </div>
+                                        <img alt="" class="new" src="{{blz.prod_tag.url}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="tab-pane fade" id="sunglass">
+                            {% for sg in sunglasses %}
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a class="product-image-wrapper"
+                                               href="{% url 'product-detail' sg.id %}">
+                                                <img alt="" src="{{sg.prod_image.url}}"/>
+                                                <h2>${{sg.selling_price}}</h2>
+                                                <p>{{sg.product_name}}</p>
+                                            </a>
+                                        </div>
+                                        <img alt="" class="new" src="{{sg.prod_tag.url}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="tab-pane fade" id="kids">
+                            {% for kds in kids %}
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a class="product-image-wrapper"
+                                               href="{% url 'product-detail' kds.id %}">
+                                                <img alt="" src="{{kds.prod_image.url}}"/>
+                                                <h2>${{kds.selling_price}}</h2>
+                                                <p>{{kds.product_name}}</p>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div><!--/category-tab-->
+
+                <div class="recommended_items"><!--recommended_items-->
+                    <h2 class="title text-center">recommended items</h2>
+
+                    <div class="carousel slide" data-ride="carousel" id="recommended-item-carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                {% for rcm in recommended %}
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <a class="product-image-wrapper"
+                                                   href="{% url 'product-detail' rcm.id %}">
+                                                    <img alt="" src="{{rcm.prod_image.url}}"/>
+                                                    <h2>${{rcm.selling_price}}</h2>
+                                                    <p>{{rcm.product_name}}</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="item">
+                                {% for rcmv in recommended1 %}
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <a class="product-image-wrapper"
+                                                   href="{% url 'product-detail' rcmv.id %}">
+                                                    <img alt="" src="{{rcmv.prod_image.url}}"/>
+                                                    <h2>${{rcmv.selling_price}}</h2>
+                                                    <p>{{rcmv.product_name}}</p>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <a class="left recommended-item-control" data-slide="prev" href="#recommended-item-carousel">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" data-slide="next" href="#recommended-item-carousel">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--/recommended_items-->
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}

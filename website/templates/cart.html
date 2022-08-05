@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="cart_items">
+    <div class="container">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active">Shopping Cart</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed">
+                <thead>
+                <tr class="cart_menu">
+                    <td class="image">Item</td>
+                    <td class="description">Description</td>
+                    <td class="price">Price</td>
+                    <td class="quantity">Quantity</td>
+                    <td class="total">Total</td>
+                    <td></td>
+                </tr>
+                </thead>
+                {% for cart in carts %}
+                <tbody>
+                <tr>
+                    <td class="cart_product">
+                        <a href=""><img alt="" src="{{cart.product.prod_image.url}}"></a>
+                    </td>
+                    <td class="cart_description">
+                        <h4><a href="">{{cart.product.product_name}}</a></h4>
+                        <p>{{cart.product.Brand}}</p>
+                    </td>
+                    <td class="cart_price">
+                        <p>${{cart.product.discounted_price}}</p>
+                    </td>
+                    <td class="my-3">
+                        <div class="my-3">
+                            <a class="minus-cart btn" onClick="window.location.reload();" pid="{{cart.product.id}}"><i
+                                    aria-hidden="true" class="fa fa-minus"
+                            ></i></a>
+                            <span id="quantity">{{cart.quantity}}</span>
+                            <a class="plus-cart btn" onClick="window.location.reload();" pid="{{cart.product.id}}"><i
+                                    aria-hidden="true" class="fa fa-plus"></i></a>
+                        </div>
+                    </td>
+                    <td class="">
+                        <p class="cart_total_price"><span>${{amount}}</span></p>
+                    </td>
+                    <td class="cart_delete">
+                        <a class="fa fa-times remove-cart" href=""
+                           onClick="window.location.reload();"
+                           pid="{{cart.product.id}}"
+                           value='Remove'></a>
+                    </td>
+                </tr>
+
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</section> <!--/#cart_items-->
+
+<section id="do_action">
+    <div class="container">
+        <div class="heading">
+            <h3>What would you like to do next?</h3>
+            <p>Choose if you have a discount code or reward points you want to use or would like to estimate your
+                delivery cost.</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="chose_area">
+                    <ul class="user_option">
+                        <li>
+                            <input type="checkbox">
+                            <label>Use Coupon Code</label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label>Use Gift Voucher</label>
+                        </li>
+                        <li>
+                            <input type="checkbox">
+                            <label>Estimate Shipping & Taxes</label>
+                        </li>
+                    </ul>
+                    {% if not user.is_authenticated %}
+
+                        {% else %}
+                        <div class="col-sm-9 offset-sm-1">
+                            <div class="row">
+                                {% for ad in add %}
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3>Address {{forloop.counter}}</h3>
+                                            <p>City: {{ad.city}}</p>
+                                            <p>State: {{ad.state}}</p>
+                                            <p>Zip Code: {{ad.zipcode}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+
+                </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="total_area">
+            <ul>
+                <li>Cart Sub Total <span>${{tamount}}</span></li>
+                <li>Eco Tax <span>$2</span></li>
+                <li>Shipping Cost <span>Free</span></li>
+                <li>Total <span><strong>Rs. <strong id="totalamount">${{totalamount}}</strong></strong></span>
+                </li>
+            </ul>
+            <a class="btn btn-default update" href="">Update</a>
+            <a class="btn btn-default check_out" href="{% url 'checkout' %}">Check Out</a>
+        </div>
+    </div>
+    </div>
+    </div>
+</section><!--/#do_action-->
+{% endblock %}

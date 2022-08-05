@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="features_items"><!--features_items-->
+        <h2 class="title text-center">Search Results for: {{request.GET.query}}</h2>
+        {% if feature_item|length < 1%}
+        <div class="content-404">
+        <img alt="" class="img-responsive" src="{% static 'website/images/404/noresult.jpg' %}"/>
+        <h2><a href="{% url 'index' %}">Bring me back Home</a></h2>
+    </div>
+        {% endif %}
+        {% for fi in feature_item %}
+        <div class="col-sm-4">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img alt="" src="{{fi.prod_image.url}}"/>
+                        <h2>${{fi.discounted_price}}</h2>
+                        <p>{{fi.product_name}}</p>
+                        <button>
+                            <a class="btn btn-outline-secondary add-btn update-cart"
+                               data-action="add" data-product="{{fi.id}}"
+                               href="{% url 'cartnew' %}">
+                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </button>
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-content">
+                            <h2>${{fi.selling_price}}</h2>
+                            <p>{{fi.product_name}}</p>
+                            <button>
+                                <a class="btn btn-outline-secondary add-btn update-cart"
+                                   data-action="add" data-product="{{fi.id}}"
+                                   href="{% url 'cartnew' %}">
+                                    <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="choose">
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                        <li><a href="{% url 'product-detail' fi.id %}"><i class="fa fa-info-circle"></i>Product
+                            Details</a></li>
+                    </ul>
+                </div>
+                <img alt="" class="new" src="{{fi.prod_tag.url}}"/>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div><!--features_items-->
+{% endblock %}

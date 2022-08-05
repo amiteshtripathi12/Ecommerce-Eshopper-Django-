@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="advertisement" xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+        <img alt="" src="{% static 'website/images/shop/advertisement.jpg' %}"/>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Sportswear
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="sportswear">
+                                <div class="panel-body">
+                                   <ul>
+                                        <li><a href="{% url 'womensdata' 'NIKE' %}">Nike </a></li>
+                                        <li><a href="{% url 'womensdata' 'UNDERARMOUR' %}">Under Armour </a></li>
+                                        <li><a href="{% url '404' %}">Adidas </a></li>
+                                        <li><a href="{% url '404' %}">Puma</a></li>
+                                        <li><a href="{% url '404' %}">ASICS </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#mens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Mens
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="mens">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'mensdata' 'FENDI' %}">Fendi</a></li>
+                                        <li><a href="{% url 'mensdata' 'GUESS' %}">Guess</a></li>
+                                        <li><a href="{% url 'mensdata' 'VALENTINO' %}">Valentino</a></li>
+                                        <li><a href="{% url 'mensdata' 'DIOR' %}">Dior</a></li>
+                                        <li><a href="{% url 'mensdata' 'ARMANI' %}">Armani</a></li>
+                                        <li><a href="{% url 'mensdata' 'PRADA' %}">Prada</a></li>
+                                        <li><a href="{% url 'mensdata' 'CHANEL' %}">Chanel</a></li>
+                                        <li><a href="{% url 'mensdata' 'GUCCI' %}">Gucci</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#womens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Womens
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="womens">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'womensdata' 'FENDI' %}">Fendi</a></li>
+                                        <li><a href="{% url 'womensdata' 'GUESS' %}">Guess</a></li>
+                                        <li><a href="{% url 'womensdata' 'VALENTINO' %}">Valentino</a></li>
+                                        <li><a href="{% url 'womensdata' 'DIOR' %}">Dior</a></li>
+                                        <li><a href="{% url '404' %}">Versace</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url 'womensdata' 'Kids' %}">Kids</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Fashion</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Households</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Interiors</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Clothing</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Bags</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url '404' %}">Shoes</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-productsr-->
+
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{% url 'womensdata' 'FENDI' %}"> <span
+                                        class="pull-right">({{fendi}})</span>Fendi</a></li>
+                                <li><a href="{% url 'womensdata' 'ALBIRO' %}"> <span
+                                        class="pull-right">({{albiro}})</span>Albiro</a></li>
+                                <li><a href="{% url 'womensdata' 'ACNE' %}"> <span class="pull-right">({{acne}})</span>Acne</a>
+                                </li>
+                                <li><a href="{% url 'womensdata' 'UNDERARMOUR' %}"> <span class="pull-right">({{underarmour}})</span>Under
+                                    Armour</a></li>
+                                <li><a href="{% url 'womensdata' 'PRADA' %}"> <span
+                                        class="pull-right">({{prada}})</span>Prada</a></li>
+                                <li><a href="{% url 'womensdata' 'CHANEL' %}"> <span
+                                        class="pull-right">({{chanel}})</span>Chanel</a></li>
+                                <li><a href="{% url 'womensdata' 'GUCCI' %}"> <span
+                                        class="pull-right">({{gucci}})</span>Gucci</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+
+                    <div class="price-range"><!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="well">
+                            <input class="span2" data-slider-max="600" data-slider-min="0" data-slider-step="5"
+                                   data-slider-value="[250,450]"
+                                   id="sl2" type="text" value=""><br/>
+                            <b>$ 0</b> <b class="pull-right">$ 600</b>
+                        </div>
+                    </div><!--/price-range-->
+
+                    {% for sf in sideofferbar %}
+                    <div class="shipping text-center"><!--shipping-->
+                        <img alt="{{sf.title}}" src="{{sf.sideofferbar.url}}"/>
+                    </div><!--/shipping-->
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items"><!--features_items-->
+                    <h2 class="title text-center">Features Items</h2>
+                    {% for ap in allproducts %}
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img alt="" src="{{ap.prod_image.url}}"/>
+                                    <h2>${{ap.discounted_price}}</h2>
+                                    <p>{{ap.product_name}}</p>
+                                    <button>
+                                        <a class="btn btn-outline-secondary add-btn update-cart"
+                                           data-action="add" data-product="{{ap.id}}"
+                                           href="{% url 'cartnew' %}">
+                                            <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </button>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>${{ap.selling_price}}</h2>
+                                        <p>{{ap.product_name}}</p>
+                                        <button>
+                                            <a class="btn btn-outline-secondary add-btn update-cart"
+                                               data-action="add" data-product="{{ap.id}}"
+                                               href="{% url 'cartnew' %}">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                    <li><a href="{% url 'product-detail' ap.id %}"><i class="fa fa-info-circle"></i>Product
+                                        Details</a></li>
+                                </ul>
+                            </div>
+                            <img alt="" class="new" src="{{ap.prod_tag.url}}"/>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><!--features_items-->
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

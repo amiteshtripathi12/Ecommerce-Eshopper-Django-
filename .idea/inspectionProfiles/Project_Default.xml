@@ -1,0 +1,81 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="static" />
+            <item index="1" class="java.lang.String" itemvalue="href" />
+            <item index="2" class="java.lang.String" itemvalue="messages.tags" />
+            <item index="3" class="java.lang.String" itemvalue="{%" />
+            <item index="4" class="java.lang.String" itemvalue="%}" />
+            <item index="5" class="java.lang.String" itemvalue="endif" />
+            <item index="6" class="java.lang.String" itemvalue="message.tags" />
+            <item index="7" class="java.lang.String" itemvalue="if" />
+            <item index="8" class="java.lang.String" itemvalue="url" />
+            <item index="9" class="java.lang.String" itemvalue="pid" />
+            <item index="10" class="java.lang.String" itemvalue="value" />
+            <item index="11" class="java.lang.String" itemvalue="required" />
+            <item index="12" class="java.lang.String" itemvalue="bgcolor" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="onclick" />
+            <item index="7" class="java.lang.String" itemvalue="form" />
+            <item index="8" class="java.lang.String" itemvalue="div" />
+            <item index="9" class="java.lang.String" itemvalue="label" />
+            <item index="10" class="java.lang.String" itemvalue="li" />
+            <item index="11" class="java.lang.String" itemvalue="button" />
+            <item index="12" class="java.lang.String" itemvalue="a" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="W605" />
+          <option value="E302" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="shopify.app.models.Product.objects" />
+          <option value="shopify.app.views.ProductDetailView.objects" />
+          <option value="shopify.app.views.CustomerRegistrationView.is_valid" />
+          <option value="shopify.app.models.Customer.objects" />
+          <option value="shopify.app.models.Cart.objects" />
+          <option value="shopify.app.models.Live_sale.objects" />
+          <option value="django.db.models.fields.PositiveIntegerField.__mul__" />
+          <option value="django.db.models.fields.related.ForeignKey.discounted_price" />
+          <option value="Eshopper.website.models.Wishlist.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="XmlInvalidId" enabled="false" level="ERROR" enabled_by_default="false" />
+  </profile>
+</component>

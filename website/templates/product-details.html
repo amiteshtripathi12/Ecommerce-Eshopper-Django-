@@ -1,0 +1,444 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Category</h2>
+                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Sportswear
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="sportswear">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'womensdata' 'NIKE' %}">Nike </a></li>
+                                        <li><a href="{% url 'womensdata' 'UNDERARMOUR' %}">Under Armour </a></li>
+                                        <li><a href="{% url '404' %}">Adidas </a></li>
+                                        <li><a href="{% url '404' %}">Puma</a></li>
+                                        <li><a href="{% url '404' %}">ASICS </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#mens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Mens
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="mens">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'mensdata' 'FENDI' %}">Fendi</a></li>
+                                        <li><a href="{% url 'mensdata' 'GUESS' %}">Guess</a></li>
+                                        <li><a href="{% url 'mensdata' 'VALENTINO' %}">Valentino</a></li>
+                                        <li><a href="{% url 'mensdata' 'DIOR' %}">Dior</a></li>
+                                        <li><a href="{% url 'mensdata' 'ARMANI' %}">Armani</a></li>
+                                        <li><a href="{% url 'mensdata' 'PRADA' %}">Prada</a></li>
+                                        <li><a href="{% url 'mensdata' 'CHANEL' %}">Chanel</a></li>
+                                        <li><a href="{% url 'mensdata' 'GUCCI' %}">Gucci</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-parent="#accordian" data-toggle="collapse" href="#womens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Womens
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse collapse" id="womens">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="{% url 'womensdata' 'FENDI' %}">Fendi</a></li>
+                                        <li><a href="{% url 'womensdata' 'GUESS' %}">Guess</a></li>
+                                        <li><a href="{% url 'womensdata' 'VALENTINO' %}">Valentino</a></li>
+                                        <li><a href="{% url 'womensdata' 'DIOR' %}">Dior</a></li>
+                                        <li><a href="{% url '404' %}">Versace</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="{% url 'womensdata' 'Kids' %}">Kids</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Fashion</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Households</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Interiors</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Clothing</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Bags</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Shoes</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-products-->
+
+                    <div class="brands_products"><!--brands_products-->
+                        <h2>Brands</h2>
+                        <div class="brands-name">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="{% url 'womensdata' 'FENDI' %}"> <span
+                                        class="pull-right">({{fendi}})</span>Fendi</a></li>
+                                <li><a href="{% url 'womensdata' 'ALBIRO' %}"> <span
+                                        class="pull-right">({{albiro}})</span>Albiro</a></li>
+                                <li><a href="{% url 'womensdata' 'ACNE' %}"> <span class="pull-right">({{acne}})</span>Acne</a>
+                                </li>
+                                <li><a href="{% url 'womensdata' 'UNDERARMOUR' %}"> <span class="pull-right">({{underarmour}})</span>Under
+                                    Armour</a></li>
+                                <li><a href="{% url 'womensdata' 'PRADA' %}"> <span
+                                        class="pull-right">({{prada}})</span>Prada</a></li>
+                                <li><a href="{% url 'womensdata' 'CHANEL' %}"> <span
+                                        class="pull-right">({{chanel}})</span>Chanel</a></li>
+                                <li><a href="{% url 'womensdata' 'GUCCI' %}"> <span
+                                        class="pull-right">({{gucci}})</span>Gucci</a></li>
+                            </ul>
+                        </div>
+                    </div><!--/brands_products-->
+
+                    <div class="price-range"><!--price-range-->
+                        <h2>Price Range</h2>
+                        <div class="well">
+                            <input class="span2" data-slider-max="600" data-slider-min="0" data-slider-step="5"
+                                   data-slider-value="[250,450]"
+                                   id="sl2" type="text" value=""><br/>
+                            <b>$ 0</b> <b class="pull-right">$ 600</b>
+                        </div>
+                    </div><!--/price-range-->
+
+                    {% for sf in sideofferbar %}
+                    <div class="shipping text-center"><!--shipping-->
+                        <img alt="{{sf.title}}" src="{{sf.sideofferbar.url}}"/>
+                    </div><!--/shipping-->
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="product-details"><!--product-details-->
+                    <div class="col-sm-5">
+                        <div class="view-product">
+                            <img alt="" src="{{product.prod_image.url}}"/>
+                            <!--<h3>ZOOM</h3>-->
+                        </div>
+                        <div class="carousel slide" data-ride="carousel" id="similar-product">
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <a href=""><img alt=""
+                                                    src="{% static 'website/images/product-details/similar1.jpg' %}"></a>
+                                    <a href=""><img alt=""
+                                                    src="{% static 'website/images/product-details/similar2.jpg' %}"></a>
+                                    <a href=""><img alt=""
+                                                    src="{% static 'website/images/product-details/similar3.jpg' %}"></a>
+                                </div>
+                                <div class="item">
+                                    <a href=""><img alt=""
+                                                    src="{% static 'website/images/product-details/similar1.jpg' %}"></a>
+                                    <a href=""><img alt=""
+                                                    src="{% static 'website/images/product-details/similar2.jpg' %}"></a>
+                                    <a href=""><img alt=""
+                                                    src="{% static 'website/images/product-details/similar3.jpg' %}"></a>
+                                </div>
+
+
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left item-control" data-slide="prev" href="#similar-product">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right item-control" data-slide="next" href="#similar-product">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="product-information"><!--/product-information-->
+                            <img alt="" class="newarrival" src="{{product.prod_tag.url}}"/>
+                            <h2>{{product.product_name}}</h2>
+                            <p>Web ID: 1089772</p>
+                            <img alt="" src="{% static 'website/images/product-details/rating.png' %}"/><br>
+                            <span>
+									<span><i class="las la-stopwatch"></i>US ${{product.selling_price}}</span>
+                              {% if request.user.is_authenticated %}
+                                <br>
+                                <a class="btn btn-outline-secondary add-btn update-cart"
+                                               data-action="add" data-product="{{product.id}}"
+                                               href="{% url 'cartnew' %}">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                              {% endif %}
+                                {% if not request.user.is_authenticated %}
+                                <br>
+                                 <a class="btn btn-outline-secondary add-btn update-cart"
+                                               data-action="add" data-product="{{product.id}}"
+                                               href="{% url 'cartnew' %}">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                {% endif %}
+
+                              {% if request.user.is_authenticated %}
+								<br>
+                                <form action="{% url 'checkoutnew' %}">
+                                <input id="prod_id2" name="prod_id" type="hidden" value={{product.id}}>
+                                <button class="btn btn-danger shadow px-5 py-2 ms-4" type="submit">Buy Now</button>
+                                </form>
+                              {% endif %}
+								</span>
+                            <p><b>Availability:</b> {{product.availability}}</p>
+                            <p><b>Condition:</b> {{product.condition}}</p>
+                            <p><b>Brand:</b> {{product.Brand}}</p>
+                            <a href=""><img alt=""
+                                            class="share img-responsive"
+                                            src="{% static 'website/images/product-details/share.png' %}"/></a>
+                        </div><!--/product-information-->
+                    </div>
+                </div><!--/product-details-->
+
+                <div class="category-tab shop-details-tab"><!--category-tab-->
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs">
+                            <li><a data-toggle="tab" href="#details">Details</a></li>
+                            <li class="active"><a data-toggle="tab" href="#reviews">Reviews {{review}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="details">
+                            {% for dtls in details %}
+                            <div class="col-sm-3">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <a class="product-image-wrapper"
+                                               href="{% url 'product-detail' dtls.id %}">
+                                                <img alt="" src="{{dtls.prod_image.url}}"/>
+                                                <h2>${{dtls.selling_price}}</h2>
+                                                <p>{{dtls.product_name}}</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="tab-pane fade active in" id="reviews">
+                            <div class="col-sm-12">
+                                <ul>
+                                    <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
+                                    <li><a href=""><i class="fa fa-clock-o"></i> {{product.pub_time}}</a></li>
+                                    <li><a href=""><i class="fa fa-calendar-o"></i>{{product.pub_date}}</a></li>
+                                </ul>
+                                <p>{{product.desc}}
+                                <div class="row">
+                                    <div class="col-md-9">
+
+                                        <header class="section-heading">
+                                            <h3>Customer Reviews </h3>
+                                        </header>
+                                    </div>
+
+                                </div>
+                                <form action="{% url 'submit_review' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <h4>Write Your Review</h4>
+
+                                    <div>
+                                        <!-- Rating stars -->
+                                        <label>How do you rate this product?</label>
+                                        <br>
+                                        <div class="rate">
+                                            <input id="rating10" name="rating" required type="radio" value="5"/><label
+                                                for="rating10" title="5"></label>
+                                            <input id="rating9" name="rating" required type="radio" value="4.5"/><label
+                                                class="half" for="rating9" title="4.5"></label>
+                                            <input id="rating8" name="rating" required type="radio" value="4"/><label
+                                                for="rating8" title="4"></label>
+                                            <input id="rating7" name="rating" required type="radio" value="3.5"/><label
+                                                class="half" for="rating7" title="3.5"></label>
+                                            <input id="rating6" name="rating" required type="radio" value="3"/><label
+                                                for="rating6" title="3"></label>
+                                            <input id="rating5" name="rating" required type="radio" value="2.5"/><label
+                                                class="half" for="rating5" title="2.5"></label>
+                                            <input id="rating4" name="rating" required type="radio" value="2"/><label
+                                                for="rating4" title="2"></label>
+                                            <input id="rating3" name="rating" required type="radio" value="1.5"/><label
+                                                class="half" for="rating3" title="1.5"></label>
+                                            <input id="rating2" name="rating" required type="radio" value="1"/><label
+                                                for="rating2" title="1"></label>
+                                            <input id="rating1" name="rating" required type="radio" value="0.5"/><label
+                                                class="half" for="rating1" title="0.5"></label>
+                                        </div>
+                                        <br>
+                                        Review Title:
+                                        <input class="form-control" name="subject" type="text">
+                                        <br>
+                                        Review:
+                                        <textarea class="form-control" name="review" rows="4"></textarea>
+                                        <br>
+                                        {% if user.is_authenticated %}
+                                        <input class="btn btn-primary" type="submit" value="Submit Review">
+                                        {% else %}
+                                        <p>You must be logged in to post a review. <span><a
+                                                class="btn btn-danger shadow px-5 py-2 ms-4" href="{% url 'login' %}">Login now</a></span>
+                                        </p>
+                                        {% endif %}
+
+                                    </div>
+                                    {% include 'includes/alerts.html' %}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/category-tab-->
+
+                <header class="section-heading">
+                    <h3>Customer Reviews </h3>
+                    <div class="rating-star">
+		<span>
+			<i aria-hidden="true"
+               class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}"></i>
+			<i aria-hidden="true"
+               class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}"></i>
+			<i aria-hidden="true"
+               class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}"></i>
+			<i aria-hidden="true"
+               class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}"></i>
+			<i aria-hidden="true"
+               class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}"></i>
+	<span>{{product.countReview}} reviews</span>
+			</span>
+                    </div>
+
+                </header>
+
+                {% for review in reviews %}
+                <article class="box mb-3">
+                    <div class="icontext w-100">
+
+                        <div class="text">
+                            <span class="date text-muted float-md-right">{{review.updated_at}} </span>
+                            <h4 class="mb-1">{{review.user}} </h4>
+                            <div class="rating-star">
+								<span>
+									<i aria-hidden="true"
+                                       class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}"></i>
+									<i aria-hidden="true"
+                                       class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}"></i>
+									<i aria-hidden="true"
+                                       class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}"></i>
+									<i aria-hidden="true"
+                                       class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}"></i>
+									<i aria-hidden="true"
+                                       class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}"></i>
+								</span>
+                            </div>
+                        </div>
+                    </div> <!-- icontext.// -->
+                    <div class="mt-3">
+                        <h6>{{review.subject}}</h6>
+                        <p>
+                            {{review.review}}
+                        </p>
+                    </div>
+                </article>
+                {% endfor %}
+
+
+                <div class="recommended_items"><!--recommended_items-->
+                    <h2 class="title text-center">recommended items</h2>
+
+                    <div class="carousel slide" data-ride="carousel" id="recommended-item-carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                {% for rcm in recommended %}
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <a class="product-image-wrapper"
+                                                   href="{% url 'product-detail' rcm.id %}">
+                                                    <img alt="" src="{{rcm.prod_image.url}}"/>
+
+                                                    <h2>${{rcm.selling_price}}</h2>
+                                                    <p>{{rcm.product_name}}</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                            <div class="item">
+                                {% for dtls in details %}
+                                <div class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <a class="product-image-wrapper"
+                                                   href="{% url 'product-detail' dtls.id %}">
+                                                    <img alt="" src="{{dtls.prod_image.url}}"/>
+                                                    <h2>${{dtls.selling_price}}</h2>
+                                                    <p>{{dtls.product_name}}</p>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <a class="left recommended-item-control" data-slide="prev" href="#recommended-item-carousel">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" data-slide="next" href="#recommended-item-carousel">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--/recommended_items-->
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
