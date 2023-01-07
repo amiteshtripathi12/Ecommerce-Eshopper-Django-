@@ -58,15 +58,6 @@ class ProductView(View):
                                               'acne': acne, 'cartItems': cartItems, 'items': items})
 
 
-def theme(request):
-    pass
-
-
-'''def index(request):
-    slideimage = Slider.objects.all()
-    return render(request, 'index.html', {'slideimage': slideimage})
-'''
-
 
 def about(request):
     if request.user.is_authenticated:
@@ -119,8 +110,8 @@ def blog_single(request):
     return render(request, 'blog-single.html', {})
 
 
-def cart(request):
-    return render(request, 'cart.html', {})
+# def cart(request):
+#     return render(request, 'cart.html', {})
 
 
 @login_required()
@@ -183,27 +174,6 @@ def contact_us(request):
         return render(request, 'contact-us.html', {'cartItems': cartItems, 'items': items})
 
 
-'''
-def signup(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        firstname = request.POST['first_name']
-        lastname = request.POST['last_name']
-        email = request.POST.get('email_id')
-        password = request.POST['password']
-        x = User.objects.create_user(username=username, first_name=firstname, last_name=lastname, email=email,
-                                     password=password)
-        x.save()
-        messages.success(request, " Your id has been successfully created")
-        return render(request, 'customerregistration.html')
-
-    else:
-        messages.error(request, "Not a valid password!")
-        return render(request, 'blog.html')
-
-'''
-
-
 class CustomerRegistrationView(View):
     def get(self, request):
         form = CustomerRegistrationForm
@@ -254,13 +224,7 @@ class ProductDetailView(View):
                        'recommended1': recommended1, 'kids': kids, 'reviews': reviews, 'review': review,
                        'sideofferbar': sideofferbar, 'cartItems': cartItems, 'items': items})
 
-    '''
-def product_details(request):
-    return render(request, 'product-details.html', {})
-'''
 
-
-# @method_decorator(login_required, name='dispatch')
 class CheckoutnewView(View):
     def post(self, request):
         global cartItems, add
@@ -579,24 +543,6 @@ def filter_data(request):
     allProducts = Products.objects.filter(discounted_price__lte=maxPrice)
     t = render_to_string('mens.html', {'data': allProducts})
     return JsonResponse({'data': t})
-
-
-'''
-''
-global topwears
-    if data == None:
-        topwears = Product.objects.filter(category='TW')
-    elif data == 'Lewis' or data == 'PeterEngland':
-        topwears = Product.objects.filter(category='TW').filter(brand=data)
-    elif data == 'below':
-        topwears = Product.objects.filter(category='TW').filter(discounted_price__lt=300)
-    elif data == 'above':
-        topwears = Product.objects.filter(category='TW').filter(discounted_price__gt=400)
-    if request.user.is_authenticated:
-        totalitem = len(Cart.objects.filter(user=request.user))
-
-    return render(request, 'app/topwear.html', {'topwears': topwears, 'totalitem
-'''
 
 
 def submit_review(request, product_id):
